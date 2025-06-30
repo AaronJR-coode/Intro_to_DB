@@ -4,16 +4,6 @@ DB_NAME = "alx_book_store"
 
 def main():
     try:
-        conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="kundakite@22"
-        )
-    except Exception as e:
-        print(f"Error: Could not connect to MySQL server: {e}")
-        return
-
-    try:
         cursor = conn.cursor()
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
         conn.commit()

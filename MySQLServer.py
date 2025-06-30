@@ -10,8 +10,8 @@ def main():
             user="root",
             password="kundakite@22"
         )
-    except Exception as e:
-        print(f"Error: Could not connect to MySQL server: {e}")
+    except Error as err:
+         print(f"Error: Could not connect to MySQL server - {err}")
         return
         
     try:
@@ -25,8 +25,8 @@ def main():
                   else f"Database '{DB_NAME}' created successfully!")
         else:
             print(f"Database '{DB_NAME}' created successfully!")
-    except Exception as e:
-        print(f"Error: Failed while creating database: {e}")
+    except Error as err:
+        print(f"Error: Failed while creating database - {err}")
     finally:
         cursor.close()
         conn.close()

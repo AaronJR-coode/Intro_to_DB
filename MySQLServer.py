@@ -8,7 +8,6 @@ def main():
         cursor = conn.cursor()
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
         conn.commit()
-        cursor.execute(f"SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name = %s", (DB_NAME,))
         exists = cursor.fetchone()[0]
         if exists:
             print(f"Database '{DB_NAME}' created successfully!" 
